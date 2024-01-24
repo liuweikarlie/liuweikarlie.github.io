@@ -11,38 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>Hexo</title>
+  <title>Blockchain Oracle</title>
   
-  <link rel="canonical" href="https://liuweikarlie.github.io/">
+  <link rel="canonical" href="https://liuweikarlie.github.io/2024/01/24/Blockchain-Oracle/">
   
-  <meta name="description" content="">
+  <meta name="description" content="I often hear people talking about ‘Oracle’ in Chinese (预言机), but it can be challenging to understand its meaning. Is it a mechanism for predicting som">
   
   
   <meta name="author" content="John Doe">
   
   
-  <meta property="og:image" content="https://liuweikarlie.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Hexo" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Hexo" />
+  <meta property="og:title" content="Blockchain Oracle" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="I often hear people talking about ‘Oracle’ in Chinese (预言机), but it can be challenging to understand its meaning. Is it a mechanism for predicting som">
   
-  <meta property="og:url" content="https://liuweikarlie.github.io/" />
+  <meta property="og:url" content="https://liuweikarlie.github.io/2024/01/24/Blockchain-Oracle/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hexo">
+  <meta name="twitter:title" content="Blockchain Oracle">
   
-  <meta name="twitter:description" content="">
-  
-  
-  
-  <meta name="twitter:image" content="https://liuweikarlie.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="I often hear people talking about ‘Oracle’ in Chinese (预言机), but it can be challenging to understand its meaning. Is it a mechanism for predicting som">
   
   
-  <meta name="twitter:url" content="https://liuweikarlie.github.io/" />
+  
+  
+  <meta name="twitter:url" content="https://liuweikarlie.github.io/2024/01/24/Blockchain-Oracle/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -207,67 +203,24 @@
 </div>
 
         <div class="trans">
-          <div class="row">
-  <div class="column">
-    <!-- Main information, edit it on theme/_config.yml -->
-    <h2 class="mb-2">I am Karlie Liu</h2>
-    <p>A HKU student interested in coding, investment and web3 😁</p>
-    <p>I am currently a master student in HKU, majoring in computer science. 
-For me, I love to explore different new areas and fields, especially the combination of finance and technology. 
-After several internship experiences in the Finance industry (software engineering, FOF investment analyst), 
-I realized that trading and investment are really fun and interesting!
-In this blog, I want to record my learning and my daily life 😜
-</p>
-  </div>
-</div>
+            <h2>Blockchain Oracle</h2>
 
-<h3>Recent Posts</h3>
+  <p>I often hear people talking about ‘Oracle’ in Chinese (预言机), but it can be challenging to understand its meaning. Is it a mechanism for predicting something? It seemed quite perplexing.</p>
+<p>However, upon conducting online research and delving into the details, I discovered that Oracle is actually a mechanism that connects offline data to the blockchain.</p>
+<h2 id="Why-Do-We-Need-Oracle"><a href="#Why-Do-We-Need-Oracle" class="headerlink" title="Why Do We Need Oracle?"></a>Why Do We Need Oracle?</h2><p>As we know, the blockchain doesn’t inherently connect with the offline world. For instance, if we want to know the price of Apple stock in the stock exchange, the blockchain lacks data related to Apple stock prices. So, how do we bring this external data into the blockchain and ensure its alignment with real-world situations?</p>
+<p>Enter the ‘Oracle.’ It functions like an API, bringing offline data onto the blockchain and vice versa. This allows people to use the data for various activities, ultimately recording offline activities on-chain. Returning to the stock example, when the Oracle fetches real-time Apple stock prices, it feeds them to the smart contract. The smart contract, constantly operating and receiving data from the Oracle, can execute certain actions or transactions based on pre-defined rules when the stock price reaches a specific range.</p>
+<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><p>Oracle networks can be centralized or decentralized. Here, I’ll focus on decentralized Oracle networks, such as Chainlink.</p>
+<p>In a decentralized Oracle network, numerous nodes collaborate to collect offline data, ensuring its accuracy. Each node is required to pledge a certain amount of tokens. If a node creates a fraudulent event, the pledged tokens will not be returned.</p>
+<ul>
+<li><strong>Request</strong>: Smart contracts initiate requests, and nodes on the network listen for these requests.</li>
+<li><strong>Fulfillment</strong>: Nodes collect data from various offline providers. The results from each node are sent back to the Oracle contract for data aggregation. The Oracle contract verifies the data, eliminates outliers and abnormal data, and computes an average.</li>
+<li><strong>Response</strong>: The final result is then returned to the smart contract.</li>
+</ul>
+<p>This decentralized Oracle network, exemplified by Chainlink, provides a robust solution for bringing external data reliably onto the blockchain, enhancing the capabilities of smart contracts.</p>
 
+  <p><a class="classtest-link" href="/tags/web3/" rel="tag">web3</a> — Jan 24, 2024</p>
+  
 
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Jan 24, 2024</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2024/01/24/Blockchain-Oracle/" >
-      
-        Blockchain Oracle
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Jan 18, 2024</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2024/01/18/Health-Record-in-Blockchain/" >
-      
-        Health Record in Blockchain
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Jan 18, 2024</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2024/01/18/hello-world/" >
-      
-        Hello World
-      
-    </a>
-  </div>
-</div>
-
-
-<h4> <a href="/archives">All Posts</a></h4>
 
         </div>
         <div class="row mt-2">

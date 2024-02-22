@@ -11,38 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - John Doe</title>
+  <title>Pointer in C++</title>
   
-  <link rel="canonical" href="https://liuweikarlie.github.io/archives/">
+  <link rel="canonical" href="https://liuweikarlie.github.io/2024/02/22/Pointer-in-C/">
   
-  <meta name="description" content="">
+  <meta name="description" content="Pointer ( usage of * and &amp;amp;  )int a=5; //declare that a=5 int *p; // declare a pointer, p is the pointer (store the address) p=&amp;amp;a // &amp;amp;+vari">
   
   
   <meta name="author" content="John Doe">
   
   
-  <meta property="og:image" content="https://liuweikarlie.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Hexo" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - John Doe" />
+  <meta property="og:title" content="Pointer in C++" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Pointer ( usage of * and &amp;amp;  )int a=5; //declare that a=5 int *p; // declare a pointer, p is the pointer (store the address) p=&amp;amp;a // &amp;amp;+vari">
   
-  <meta property="og:url" content="https://liuweikarlie.github.io/archives/" />
+  <meta property="og:url" content="https://liuweikarlie.github.io/2024/02/22/Pointer-in-C/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - John Doe">
+  <meta name="twitter:title" content="Pointer in C++">
   
-  <meta name="twitter:description" content="">
-  
-  
-  
-  <meta name="twitter:image" content="https://liuweikarlie.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="Pointer ( usage of * and &amp;amp;  )int a=5; //declare that a=5 int *p; // declare a pointer, p is the pointer (store the address) p=&amp;amp;a // &amp;amp;+vari">
   
   
-  <meta name="twitter:url" content="https://liuweikarlie.github.io/archives/" />
+  
+  
+  <meta name="twitter:url" content="https://liuweikarlie.github.io/2024/02/22/Pointer-in-C/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -207,112 +203,58 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>Pointer in C++</h2>
+
+  <h2 id="Pointer-usage-of-and"><a href="#Pointer-usage-of-and" class="headerlink" title="Pointer ( usage of * and &amp;  )"></a>Pointer ( usage of <code>*</code> and <code>&amp;</code>  )</h2><pre><code class="highlight c"><span class="type">int</span> a=<span class="number">5</span>; <span class="comment">//declare that a=5</span>
+<span class="type">int</span> *p; <span class="comment">// declare a pointer, p is the pointer (store the address)</span>
+p=&amp;a <span class="comment">// &amp;+variable represent the address of that variable, so p equal to the address of the variable</span>
+
+<span class="built_in">printf</span>(<span class="string">&quot;the value of a %d\n&quot;</span>,*p) <span class="comment">// *p will first use the address store in the p, to find the value. *p ---&gt; (p store the address of a) ---&gt; find the value in that address ---&gt; 5</span></code></pre>
+
+<ul>
+<li><code>p</code> is pointer, storing the address of a</li>
+<li><code>*p</code> can return the corresponding value of that address —&gt; a&#x3D;5</li>
+<li><code>p=&amp;a</code> assign the address of a to the pointer p, so p contain address of a</li>
+<li><code>int *p</code> declare the pointer</li>
+</ul>
+<p>&amp; meaning the memory address of the operator &#x2F; variables, if a function take a parameter as a pointer and i passing the <code>&amp;a</code> to the function, it means pass by reference. it will affect the variable even outside the function. </p>
+<pre><code class="highlight c"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span>
+
+<span class="type">int</span> <span class="title function_">add</span> <span class="params">(<span class="type">int</span> *p)</span>&#123;
+	*p=<span class="number">10</span>;
+&#125;
+
+<span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;
+
+	<span class="type">int</span> a=<span class="number">5</span>;
+	<span class="built_in">printf</span>(<span class="string">&quot;The value of a %d\n&quot;</span>,a);
+	add(&amp;a);
+	<span class="built_in">printf</span>(<span class="string">&quot;The value of a %d\n&quot;</span>,a);
+	<span class="keyword">return</span> <span class="number">0</span>;
+&#125;</code></pre>
+
+<h2 id="Usage-of-void"><a href="#Usage-of-void" class="headerlink" title="Usage of void *"></a>Usage of <code>void *</code></h2><p><code>void *</code> is generic pointer that can be used to represent the pointer in any data type –&gt; untyped.</p>
+<pre><code class="c">
+int a=5;
+char b=&#39;d&#39;;
 
 
-    <article>
-      <div class="row">
+// usage 1, Pointer to any type
 
-        <div class="three columns left lit">
-          <p class="bottom">Feb 22, 2024</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2024/02/22/Pointer-in-C/" class="">
-            
-              Pointer in C++
-            
-          </a>
-        </div>
-      </div>
-    </article>
+void *pr; // declare a pointer with untyped
 
-    <article>
-      <div class="row">
+pr=&amp;a; // pr store the address of a
+pr=&amp;b;
 
-        <div class="three columns left lit">
-          <p class="bottom">Jan 30, 2024</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2024/01/30/Big-Loss-from-China-Snowball/" class="">
-            
-              Big Loss from China Snowball
-            
-          </a>
-        </div>
-      </div>
-    </article>
+// usage 2 Casting
+void *pr=&amp;a;
+int *c=(int *)pr // convert the untyped pointer to int pointer type and then assign to new integer pointer 
+// (int *) emphasize that it should convert to int pointer type. 
 
-    <article>
-      <div class="row">
+</code></pre>
 
-        <div class="three columns left lit">
-          <p class="bottom">Jan 26, 2024</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2024/01/26/High-Oil-Price/" class="">
-            
-              High Oil Price
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 24, 2024</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2024/01/24/Blockchain-Oracle/" class="">
-            
-              Blockchain Oracle
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 18, 2024</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2024/01/18/Health-Record-in-Blockchain/" class="">
-            
-              Health Record in Blockchain
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 18, 2024</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2024/01/18/hello-world/" class="">
-            
-              Hello World
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p><a class="classtest-link" href="/tags/tech/" rel="tag">tech</a> — Feb 22, 2024</p>
+  
 
 
         </div>

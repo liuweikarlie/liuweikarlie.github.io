@@ -205,11 +205,11 @@
         <div class="trans">
             <h2>Pointer in C++</h2>
 
-  <h2 id="Pointer-usage-of-and"><a href="#Pointer-usage-of-and" class="headerlink" title="Pointer ( usage of * and &amp;  )"></a>Pointer ( usage of <code>*</code> and <code>&amp;</code>  )</h2><pre><code class="highlight c"><span class="type">int</span> a=<span class="number">5</span>; <span class="comment">//declare that a=5</span>
-<span class="type">int</span> *p; <span class="comment">// declare a pointer, p is the pointer (store the address)</span>
-p=&amp;a <span class="comment">// &amp;+variable represent the address of that variable, so p equal to the address of the variable</span>
+  <h2 id="Pointer-usage-of-and"><a href="#Pointer-usage-of-and" class="headerlink" title="Pointer ( usage of * and &amp;  )"></a>Pointer ( usage of <code>*</code> and <code>&amp;</code>  )</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">//declare that a=5</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span> <span class="token comment">// declare a pointer, p is the pointer (store the address)</span>
+p<span class="token operator">=</span><span class="token operator">&amp;</span>a <span class="token comment">// &amp;+variable represent the address of that variable, so p equal to the address of the variable</span>
 
-<span class="built_in">printf</span>(<span class="string">&quot;the value of a %d\n&quot;</span>,*p) <span class="comment">// *p will first use the address store in the p, to find the value. *p ---&gt; (p store the address of a) ---&gt; find the value in that address ---&gt; 5</span></code></pre>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"the value of a %d\n"</span><span class="token punctuation">,</span><span class="token operator">*</span>p<span class="token punctuation">)</span> <span class="token comment">// *p will first use the address store in the p, to find the value. *p ---> (p store the address of a) ---> find the value in that address ---> 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>p</code> is pointer, storing the address of a</li>
@@ -218,40 +218,39 @@ p=&amp;a <span class="comment">// &amp;+variable represent the address of that v
 <li><code>int *p</code> declare the pointer</li>
 </ul>
 <p>&amp; meaning the memory address of the operator &#x2F; variables, if a function take a parameter as a pointer and i passing the <code>&amp;a</code> to the function, it means pass by reference. it will affect the variable even outside the function. </p>
-<pre><code class="highlight c"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 
-<span class="type">int</span> <span class="title function_">add</span> <span class="params">(<span class="type">int</span> *p)</span>&#123;
-	*p=<span class="number">10</span>;
-&#125;
+<span class="token keyword">int</span> <span class="token function">add</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token operator">*</span>p<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 
-	<span class="type">int</span> a=<span class="number">5</span>;
-	<span class="built_in">printf</span>(<span class="string">&quot;The value of a %d\n&quot;</span>,a);
-	add(&amp;a);
-	<span class="built_in">printf</span>(<span class="string">&quot;The value of a %d\n&quot;</span>,a);
-	<span class="keyword">return</span> <span class="number">0</span>;
-&#125;</code></pre>
+	<span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The value of a %d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The value of a %d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Usage-of-void"><a href="#Usage-of-void" class="headerlink" title="Usage of void *"></a>Usage of <code>void *</code></h2><p><code>void *</code> is generic pointer that can be used to represent the pointer in any data type –&gt; untyped.</p>
-<pre><code class="c">
-int a=5;
-char b=&#39;d&#39;;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">
+<span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> b<span class="token operator">=</span><span class="token char">'d'</span><span class="token punctuation">;</span>
 
 
-// usage 1, Pointer to any type
+<span class="token comment">// usage 1, Pointer to any type</span>
 
-void *pr; // declare a pointer with untyped
+<span class="token keyword">void</span> <span class="token operator">*</span>pr<span class="token punctuation">;</span> <span class="token comment">// declare a pointer with untyped</span>
 
-pr=&amp;a; // pr store the address of a
-pr=&amp;b;
+pr<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span> <span class="token comment">// pr store the address of a</span>
+pr<span class="token operator">=</span><span class="token operator">&amp;</span>b<span class="token punctuation">;</span>
 
-// usage 2 Casting
-void *pr=&amp;a;
-int *c=(int *)pr // convert the untyped pointer to int pointer type and then assign to new integer pointer 
-// (int *) emphasize that it should convert to int pointer type. 
+<span class="token comment">// usage 2 Casting</span>
+<span class="token keyword">void</span> <span class="token operator">*</span>pr<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>c<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span>pr <span class="token comment">// convert the untyped pointer to int pointer type and then assign to new integer pointer </span>
+<span class="token comment">// (int *) emphasize that it should convert to int pointer type. </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-</code></pre>
 
   <p><a class="classtest-link" href="/tags/tech/" rel="tag">tech</a> — Feb 22, 2024</p>
   
